@@ -49,4 +49,13 @@ def update
   DB[:conn].execute(sql, self.name, self.grade, self.id)
 end
 
+def self.create
+  beyonce = Self.new(name, grade)
+  beyonce.save
+  beyonce
+end
+
+def self.new_from_db
+  Self.new(row[0], row[1], row[3])
+
 end
