@@ -31,4 +31,16 @@ def self.drop_table
   DB[:conn].execute(sql)
 end
 
+def save
+  if self.id
+    self.update
+  else
+  sql = <<-SQL
+  INSERT INTO students (name, grade) VALUES (?, ?)
+  SQL
+
+  DB[:conn].execute(SQL, self.name, self.grade)
+  @id = DB[:conn].execute("SELECT last_insert_rowid() FROM songs")[0][0]
+end
+end
 end
