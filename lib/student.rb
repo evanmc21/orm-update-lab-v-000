@@ -56,6 +56,6 @@ def self.create
 end
 
 def self.new_from_db
-  Self.new(row[0], row[1], row[3])
+  Self.new(row[0], row[1], row[2])
 
 end
