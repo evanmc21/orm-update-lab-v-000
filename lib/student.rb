@@ -45,7 +45,7 @@ def save
 end
 
 def self.create
-  beyonce = Self.new(name, grade)
+  beyonce = Student.new(name, grade)
   beyonce.save
   beyonce
 end
