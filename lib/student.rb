@@ -44,14 +44,14 @@ def save
   end
 end
 
-def self.create
-  beyonce = Student.new(name, grade)
+def self.create(name, grade)
+  beyonce = Self.new(name, grade)
   beyonce.save
   beyonce
 end
 
-def self.new_from_db
-  Student.new(row[0], row[1], row[2])
+def self.new_from_db(row)
+  Self.new(row[0], row[1], row[2])
 end
 
 def self.find_by_name(name)
